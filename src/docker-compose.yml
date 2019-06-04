@@ -1,0 +1,11 @@
+version: '2'  ## version of composer
+services:
+  website: ## just a name used to communicate with other containers
+    container_name: php72
+    image: tut:php_img  ## similar to:  docker build -t tut:php_img .
+    build:
+      context: ./  ## looking for Dokcerfile
+    volumes:
+      - /Development/PetProjects/DockerPHPTutorial/src:/var/www/html/
+    ports:
+      - 8000:80
